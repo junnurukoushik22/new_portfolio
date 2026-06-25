@@ -4,6 +4,32 @@ body {
 }
 
 
+.hscroll_progress {
+    transform-origin: left;
+    position: fixed;
+    top: 5px;
+    left: 8px;
+    width: 100%;
+    height: 3px;
+    background-color: greenyellow;
+
+    animation: grow_progress;
+    animation-timeline: scroll();
+}
+
+.vscroll_progress {
+    transform-origin: top;
+    position: fixed;
+    left: 8px;
+    top: 5px;
+    width: 3px;
+    height: 100vh;
+    background-color: greenyellow;
+
+    animation: vertical_grow_progress;
+    animation-timeline: scroll();
+}
+
 .home_page_container {
     display: flex;
     justify-content: center;
@@ -56,6 +82,26 @@ body {
     animation-iteration-count: infinite;
 }
 
+
+
+@keyframes grow_progress {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes vertical_grow_progress {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    } 
+}
+
 @keyframes upward {
     from {
         opacity: 0;
@@ -80,3 +126,5 @@ body {
         transform: translateY(-9px);
     }
 }
+
+
